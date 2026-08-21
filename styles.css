@@ -650,6 +650,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(1.08);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.bento-card-1.is-visible .bento-card-image-bg {
+  transform: scale(1);
 }
 
 .bento-card-1 .bento-card-image-overlay {
@@ -709,7 +715,7 @@ body {
   color: var(--text-dark-primary);
 }
 
-/* Card 4: Centro in basso (Azzurrino Sky Light con Watermark SVG) */
+/* Card 4: Centro in basso (Azzurrino Sky Light con Watermark SVG Rotante) */
 .bento-card-4 {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
@@ -726,7 +732,7 @@ body {
   z-index: 2;
 }
 
-/* Watermark SVG brand logo monumentale, di cui si intravede solo un quarto/terzo nell'angolo */
+/* Watermark SVG che entra ruotando per ULTIMO (ritardo 0.55s dopo il testo 7/7) */
 .bento-card-watermark {
   position: absolute;
   right: -170px;
@@ -734,11 +740,19 @@ body {
   width: 440px;
   height: 440px;
   pointer-events: none;
-  opacity: 0.14;
+  opacity: 0;
   z-index: 1;
-  transform: rotate(-10deg);
+  transform: rotate(-50deg) scale(0.8);
+  transform-origin: center center;
+  transition: transform 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.55s,
+              opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s;
   mask-image: radial-gradient(circle at 35% 35%, black 40%, transparent 85%);
   -webkit-mask-image: radial-gradient(circle at 35% 35%, black 40%, transparent 85%);
+}
+
+.bento-card-4.is-visible .bento-card-watermark {
+  opacity: 0.14;
+  transform: rotate(-10deg) scale(1);
 }
 
 .bento-card-watermark path {
@@ -762,7 +776,7 @@ body {
   overflow: hidden;
 }
 
-/* Immagine Giocatrice a copertura intera del box */
+/* Immagine Giocatrice a copertura intera del box con reveal ad inerzia */
 .bento-player-visual-wrap {
   position: absolute;
   inset: 0;
@@ -774,6 +788,15 @@ body {
   justify-content: center;
   overflow: hidden;
   z-index: 1;
+  opacity: 0;
+  transform: translateY(30px) scale(0.97);
+  transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s,
+              transform 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
+}
+
+.bento-card-5.is-visible .bento-player-visual-wrap {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .bento-player-img {
@@ -804,6 +827,38 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+/* Micro-Staggering degli elementi interni a tutte le card */
+.bento-card .card-number-huge,
+.bento-mini-card .card-number-huge {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s,
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
+}
+
+.bento-card .card-meta-title,
+.bento-mini-card .card-meta-title {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+}
+
+.bento-card .card-meta-desc,
+.bento-mini-card .card-meta-desc {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s,
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
+}
+
+.reveal-item.is-visible .card-number-huge,
+.reveal-item.is-visible .card-meta-title,
+.reveal-item.is-visible .card-meta-desc {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Tipografia Base Cards */
