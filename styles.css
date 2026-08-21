@@ -1004,6 +1004,7 @@ body {
   }
   .bento-grid {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto !important;
     grid-auto-rows: auto;
   }
   .bento-card-1 {
@@ -1111,11 +1112,12 @@ body {
     gap: 0.8rem;
   }
   
-  /* Bento Grid Mobile: Layout Ibrido Compatto (Card 1 Full + Griglia 2x2 Statistiche + Card 5 Full) */
+  /* Bento Grid Mobile: Layout Ibrido Compatto con i 4 quadrotti ravvicinati (gap 4px) */
   .bento-grid {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto !important;
     grid-auto-rows: auto;
-    gap: 6px;
+    gap: 4px;
   }
   
   /* Card 1: Panoramica Full Width Pulita (Senza testi superflui) */
@@ -1124,6 +1126,7 @@ body {
     grid-row: auto;
     min-height: 220px;
     padding: 0;
+    margin-bottom: 2px;
   }
 
   .bento-card-1 .bento-card-image-overlay {
@@ -1145,30 +1148,32 @@ body {
     display: none; /* Rimosso testo lungo 'Manto ufficiale...' su mobile */
   }
   
-  /* Card 2: 2 Mini-Card affiancate (Riga 1 del blocco 2x2) */
+  /* Card 2: 2 Mini-Card affiancate (Riga 1 del blocco 2x2 - Spazio ravvicinato 4px) */
   .bento-card-2 {
     grid-column: 1 / 3;
     grid-row: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 4px;
     padding: 0;
+    margin: 0;
     background: transparent;
     border: none;
   }
 
-  /* Tutte e 4 le card 2x2 con altezza rigorosamente identica, stesso padding e stessa struttura flex */
+  /* Tutte e 4 le card 2x2 con altezza rigorosamente identica, stesso padding e vicine */
   .bento-mini-card,
   .bento-card-3,
   .bento-card-4 {
     height: 140px !important;
     min-height: 140px !important;
     max-height: 140px !important;
-    padding: 1.2rem !important;
+    padding: 1.1rem !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-end !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
   }
 
   .bento-mini-card .card-number-huge,
@@ -1212,6 +1217,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    margin-top: 2px;
   }
   
   .bento-card-5 .bento-player-content {
