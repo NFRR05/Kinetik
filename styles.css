@@ -126,7 +126,7 @@ body {
 }
 
 /* ==========================================================================
-   BRAND PRELOADER: Cinema Intro (Slow Spin -> Volt Green -> Soft Shift + Wordmark Slide)
+   BRAND PRELOADER: Cinema Intro (Snappy Spin -> Volt Green -> Smooth Wordmark -> Fast Curtain)
    ========================================================================== */
 .site-preloader {
   position: fixed;
@@ -142,8 +142,8 @@ body {
   pointer-events: auto;
   opacity: 1;
   transform: translateY(0);
-  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1),
-              opacity 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1),
+              opacity 0.5s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform, opacity;
 }
 
@@ -161,7 +161,7 @@ body {
   max-width: 95vw;
 }
 
-/* 1. Logo SVG: Inizialmente al centro esatto dello schermo, rotazione dolce e graduale */
+/* 1. Logo SVG: Inizialmente al centro esatto dello schermo, rotazione rapida e scattante (0.75s) */
 .preloader-logo-wrap {
   display: flex;
   align-items: center;
@@ -172,19 +172,19 @@ body {
 .preloader-logo-svg {
   width: clamp(65px, 9vw, 88px);
   height: clamp(65px, 9vw, 88px);
-  animation: preloaderLogoSpin 1.4s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  animation: preloaderLogoSpin 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: transform, opacity;
 }
 
 .preloader-logo-path {
   fill: #091a30;
-  animation: preloaderPathColor 1.4s ease forwards;
+  animation: preloaderPathColor 0.8s ease forwards;
 }
 
 @keyframes preloaderLogoSpin {
   0% {
     opacity: 0;
-    transform: rotate(0deg) scale(0.78);
+    transform: rotate(0deg) scale(0.7);
   }
   25% {
     opacity: 1;
@@ -196,11 +196,11 @@ body {
 }
 
 @keyframes preloaderPathColor {
-  0%, 55% {
+  0%, 45% {
     fill: #091a30;
     filter: none;
   }
-  85% {
+  75% {
     fill: var(--accent-volt);
     filter: drop-shadow(0 0 16px rgba(212, 255, 0, 0.7));
   }
@@ -210,7 +210,7 @@ body {
   }
 }
 
-/* 2. Wordmark Wrap: Espansione dolce, progressiva e priva di scatti bruschi (1.6s) */
+/* 2. Wordmark Wrap: Espansione fluida e veloce a partire da t=0.7s (0.85s) */
 .preloader-wordmark-wrap {
   overflow: hidden;
   display: flex;
@@ -219,7 +219,7 @@ body {
   max-width: 0;
   margin-left: 0;
   opacity: 0;
-  animation: preloaderWordmarkExpand 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.35s forwards;
+  animation: preloaderWordmarkExpand 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
   will-change: max-width, margin-left, opacity;
 }
 
@@ -233,9 +233,9 @@ body {
   white-space: nowrap;
   display: inline-block;
   opacity: 0;
-  transform: translateX(-30px);
+  transform: translateX(-35px);
   clip-path: inset(0 100% 0 0);
-  animation: preloaderWordmarkSlideIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) 1.35s forwards;
+  animation: preloaderWordmarkSlideIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards;
   will-change: transform, opacity, clip-path;
   padding-right: 0.5rem;
 }
@@ -246,7 +246,7 @@ body {
     margin-left: 0;
     opacity: 0;
   }
-  10% {
+  15% {
     opacity: 1;
   }
   100% {
@@ -259,10 +259,10 @@ body {
 @keyframes preloaderWordmarkSlideIn {
   0% {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-35px);
     clip-path: inset(0 100% 0 0);
   }
-  20% {
+  25% {
     opacity: 1;
   }
   100% {
