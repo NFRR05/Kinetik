@@ -909,17 +909,17 @@ body {
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-  /* Giocatore Hero su Mobile: perfettamente centrato ed ingrandito (match con cerchio rosso) */
+  /* Giocatore Hero su Mobile: Raddoppiato di dimensione (almeno 2x) e centrato */
   .hero-player-layer {
     position: absolute;
     left: 50%;
-    top: 48%;
+    top: 50%;
     bottom: auto;
     right: auto;
     transform: translate(-50%, -50%);
-    width: clamp(360px, 94vw, 580px);
-    height: 64vh;
-    max-height: 600px;
+    width: clamp(650px, 175vw, 1050px);
+    height: 85vh;
+    max-height: 850px;
     display: flex;
     justify-content: center;
     align-items: center;
