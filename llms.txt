@@ -14,8 +14,8 @@
 - **Prenotazioni**: Sistema rapido di prenotazione campi e lezioni private.
 
 ## Link Ufficiali
-- [Homepage KINETIK](https://kinetik.vercel.app/)
-- [Struttura & Numeri del Club](https://kinetik.vercel.app/#metriche)
-- [Maestri & Corsi](https://kinetik.vercel.app/#corsi)
-- [Tornei & Community](https://kinetik.vercel.app/#tornei)
-- [Prenota un Campo](https://kinetik.vercel.app/#prenota)
+- [Homepage KINETIK](https://kinetik-sports.vercel.app/)
+- [Struttura & Numeri del Club](https://kinetik-sports.vercel.app/#metriche)
+- [Maestri & Corsi](https://kinetik-sports.vercel.app/#corsi)
+- [Tornei & Community](https://kinetik-sports.vercel.app/#tornei)
+- [Prenota un Campo](https://kinetik-sports.vercel.app/#prenota)

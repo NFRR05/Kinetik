@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kinetik.vercel.app/sitemap.xml
+Sitemap: https://kinetik-sports.vercel.app/sitemap.xml
