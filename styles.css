@@ -786,7 +786,7 @@ body {
   transform: none !important;
 }
 
-/* Overlay contenuto posizionato esattamente all'altezza di riga 2 (246px) per allineamento perfetto con Card 4 */
+/* Overlay contenuto posizionato esattamente all'altezza di riga 2 (246px) su desktop con sfumatura ultra-progressiva */
 .bento-player-content {
   position: absolute;
   top: calc(240px + 6px); /* Inizio esatto di Row 2 */
@@ -795,7 +795,7 @@ body {
   bottom: 0;
   z-index: 2;
   box-sizing: border-box;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.95) 28%, #ffffff 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 15%, rgba(255, 255, 255, 0.65) 40%, rgba(255, 255, 255, 0.94) 65%, #ffffff 100%);
   padding: 1.8rem;
   display: flex;
   flex-direction: column;
@@ -829,6 +829,8 @@ body {
   line-height: 1.45;
   color: var(--text-dark-secondary);
   margin-top: 0.35rem;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 /* --- Responsive Breakpoints --- */
@@ -843,7 +845,7 @@ body {
     padding: 6rem var(--layout-inset) 1.5rem var(--layout-inset);
   }
   .hero-player-layer {
-    width: clamp(480px, 74vw, 1100px);
+    width: clamp(440px, 68vw, 980px);
   }
   .metrics-section {
     padding: 4.5rem var(--layout-inset) 5.5rem var(--layout-inset);
@@ -852,10 +854,23 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
   }
+  .bento-card-1 {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    min-height: 260px;
+  }
   .bento-card-5 {
     grid-column: 1 / 3;
     grid-row: auto;
-    min-height: 380px;
+    min-height: 420px;
+  }
+  .bento-card-5 .bento-player-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: auto;
   }
 }
 
@@ -888,14 +903,44 @@ body {
     top: 2%;
     font-size: clamp(3.2rem, 14vw, 5.5rem);
   }
+  
+@keyframes heroPlayerCutoutInMobile {
+  0% { opacity: 0; transform: translate(-50%, calc(-50% + 40px)) scale(0.94); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+  /* Giocatore Hero su Mobile: perfettamente centrato ed ingrandito (match con cerchio rosso) */
   .hero-player-layer {
-    right: 0%;
-    width: 90vw;
-    min-width: 300px;
+    position: absolute;
+    left: 50%;
+    top: 48%;
+    bottom: auto;
+    right: auto;
+    transform: translate(-50%, -50%);
+    width: clamp(360px, 94vw, 580px);
+    height: 64vh;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
+    animation: heroPlayerCutoutInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
   }
+  
+  .hero-player-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  /* Headline inferiore su Mobile: visibilmente più grande e di forte impatto */
   .hero-bottom-headline {
-    font-size: clamp(1.6rem, 6vw, 2.6rem);
+    font-size: clamp(2.4rem, 9.2vw, 3.6rem);
+    line-height: 0.92;
   }
+  
   .metrics-section {
     padding: 3.5rem var(--layout-inset) 4.5rem var(--layout-inset);
   }
@@ -904,15 +949,56 @@ body {
     align-items: flex-start;
     gap: 0.8rem;
   }
+  
+  /* Bento Grid Mobile: tutte le card visibili a 1 colonna */
   .bento-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    gap: 8px;
   }
-  .bento-card-1,
-  .bento-card-2,
-  .bento-card-3,
-  .bento-card-4,
-  .bento-card-5 {
-    grid-column: 1 / 2;
+  
+  .bento-card-1 {
+    grid-column: 1 / -1;
     grid-row: auto;
+    min-height: 250px;
+  }
+  
+  .bento-card-2 {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  
+  .bento-card-3,
+  .bento-card-4 {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 210px;
+  }
+  
+  .bento-card-5 {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .bento-card-5 .bento-player-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    margin-top: auto;
+    padding: 1.6rem;
+    width: 100%;
+  }
+
+  .bento-card-watermark {
+    width: 240px;
+    height: 240px;
+    right: -90px;
+    bottom: -90px;
   }
 }
