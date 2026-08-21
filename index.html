@@ -297,20 +297,23 @@
   <!-- ==================== SCRIPTS: LENIS & SCROLL REVEAL OBSERVER ==================== -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // 0. Brand Preloader: Gestione Animazione di Ingresso & Rivelazione Pagina (1.6s)
+    // 0. Brand Preloader: Gestione Animazione di Ingresso & Rivelazione Pagina
     window.addEventListener('DOMContentLoaded', () => {
       const preloader = document.getElementById('site-preloader');
       if (preloader) {
         setTimeout(() => {
-          // 1. Apertura sipario preloader
+          // 1. Apertura sipario preloader verso l'alto (0.5s)
           preloader.classList.add('loaded');
-          // 2. Avvio immediato dell'animazione di ingresso della Hero
-          document.body.classList.add('hero-animated');
+          
+          // 2. Avvio dell'animazione di montaggio Hero non appena il sipario si solleva
+          setTimeout(() => {
+            document.body.classList.add('hero-animated');
+          }, 200);
           
           setTimeout(() => {
             preloader.style.display = 'none';
-          }, 550);
-        }, 1600); // 1.6s: rotazione rapida logo (0.75s) -> scorrimento fluido KINETIK (0.85s) -> sipario veloce (0.5s)
+          }, 600);
+        }, 1600);
       } else {
         document.body.classList.add('hero-animated');
       }
