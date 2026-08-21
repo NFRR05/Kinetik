@@ -105,7 +105,7 @@
           <img src="assets/bento-court.webp" alt="Campi Panoramici Indoor KINETIK" class="bento-card-image-bg">
           <div class="bento-card-image-overlay">
             <div>
-              <div class="card-number-huge">6</div>
+              <div class="card-number-huge" data-counter="6">0</div>
               <h3 class="card-meta-title">Campi Panoramici Indoor</h3>
               <p class="card-meta-desc">Manto ufficiale Mondo Supercourt XN e cristalli stratificati 12mm.</p>
             </div>
@@ -117,7 +117,7 @@
           <!-- Mini Card A: Tennis (Bianco) -->
           <article class="bento-mini-card">
             <div>
-              <div class="card-number-huge">3</div>
+              <div class="card-number-huge" data-counter="3">0</div>
               <h3 class="card-meta-title">Campi Tennis</h3>
               <p class="card-meta-desc">Resina veloce &amp; terra battuta.</p>
             </div>
@@ -126,7 +126,7 @@
           <!-- Mini Card B: Altezza (Azzurrino Sky Light) -->
           <article class="bento-mini-card sky-accent">
             <div>
-              <div class="card-number-huge">10M</div>
+              <div class="card-number-huge" data-counter="10" data-suffix="M">0M</div>
               <h3 class="card-meta-title">Altezza Libera</h3>
               <p class="card-meta-desc">Zero ostacoli per il lob perfetto.</p>
             </div>
@@ -136,7 +136,7 @@
         <!-- Card 3: Centro in alto (Verde Volt Brand) -->
         <article class="bento-card bento-card-3 reveal-item">
           <div>
-            <div class="card-number-huge">100%</div>
+            <div class="card-number-huge" data-counter="100" data-suffix="%">0%</div>
             <h3 class="card-meta-title">Maestri Certificati</h3>
             <p class="card-meta-desc">Istruttori federali FITP di 1° e 2° livello per Junior &amp; Adulti.</p>
           </div>
@@ -145,7 +145,7 @@
         <!-- Card 4: Centro in basso (Azzurrino Sky Light con Logo SVG Watermark) -->
         <article class="bento-card bento-card-4 reveal-item">
           <div class="bento-card-content">
-            <div class="card-number-huge">7/7</div>
+            <div class="card-number-huge" data-counter="7" data-suffix="/7">0/7</div>
             <h3 class="card-meta-title">Aperti 365 Giorni</h3>
             <p class="card-meta-desc">Dalle 07:00 alle 24:00 non-stop.</p>
           </div>
@@ -165,7 +165,7 @@
 
           <!-- Contenuto Metriche e Community in basso -->
           <div class="bento-player-content">
-            <div class="card-number-huge">+2.400</div>
+            <div class="card-number-huge" data-counter="2400" data-prefix="+" data-format="italian">+0</div>
             <h3 class="card-meta-title">Community &amp; Tornei</h3>
             <p class="card-meta-desc">
               Match settimanali, tornei FITP ufficiali e ranking interno per ogni livello di gioco.
@@ -194,8 +194,6 @@
     });
 
     const navbar = document.getElementById('navbar');
-    let lastKnownScrollPosition = 0;
-    let ticking = false;
 
     function onScroll(scrollY) {
       if (scrollY > 40) {
@@ -234,11 +232,52 @@
       });
     });
 
-    // 2. IntersectionObserver per Scroll Reveal delle Bento Cards
+    // 2. Funzione Animazione Counter Numerico (~1 secondo)
+    function animateCounter(el) {
+      const target = parseFloat(el.getAttribute('data-counter'));
+      if (isNaN(target)) return;
+      const prefix = el.getAttribute('data-prefix') || '';
+      const suffix = el.getAttribute('data-suffix') || '';
+      const isItalianFormat = el.getAttribute('data-format') === 'italian';
+      const duration = 1000; // 1.0 secondo
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        // Easing cubico fluido
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = Math.floor(ease * target);
+        
+        let formattedNumber = current.toString();
+        if (isItalianFormat) {
+          formattedNumber = current.toLocaleString('it-IT');
+        }
+        el.textContent = `${prefix}${formattedNumber}${suffix}`;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          let finalStr = target.toString();
+          if (isItalianFormat) finalStr = target.toLocaleString('it-IT');
+          el.textContent = `${prefix}${finalStr}${suffix}`;
+        }
+      }
+      requestAnimationFrame(step);
+    }
+
+    // 3. IntersectionObserver per Scroll Reveal & Counter Trigger
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
+          
+          // Trigger animazione counter per i numeri all'interno della card visibile
+          const counterElements = entry.target.querySelectorAll('[data-counter]');
+          counterElements.forEach(el => {
+            animateCounter(el);
+          });
+
           observer.unobserve(entry.target);
         }
       });
