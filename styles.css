@@ -909,17 +909,17 @@ body {
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-  /* Giocatore Hero su Mobile: leggermente ricalibrato di scala e spostato verso sinistra */
+  /* Giocatore Hero su Mobile: MOLTO più grande (195vw / 90vh) e spostato ulteriormente verso sinistra (left: 36%) */
   .hero-player-layer {
     position: absolute;
-    left: 43%;
+    left: 36%;
     top: 50%;
     bottom: auto;
     right: auto;
     transform: translate(-50%, -50%);
-    width: clamp(520px, 140vw, 850px);
-    height: 76vh;
-    max-height: 750px;
+    width: clamp(750px, 195vw, 1200px);
+    height: 90vh;
+    max-height: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
