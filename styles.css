@@ -913,20 +913,7 @@ body {
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-  .hero-wrapper {
-    position: relative;
-    width: 100vw;
-    max-width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    height: 100dvh;
-    min-height: 100vh;
-    min-height: 100svh;
-    min-height: 100dvh;
-    overflow: hidden;
-  }
-
-  /* Giocatore Hero su Mobile: resa colossale con transform scale(2.6) senza causare overflow layout viewport su iOS */
+  /* Giocatore Hero su Mobile: ancora più a sinistra (left: 10%), più in basso (top: 65%) con dissolvenza molto più marcata */
   .hero-player-layer {
     position: absolute;
     left: 10%;
@@ -934,9 +921,9 @@ body {
     bottom: auto;
     right: auto;
     transform: translate(-50%, -50%);
-    width: 85vw;
-    height: 75vh;
-    max-height: 750px;
+    width: clamp(1200px, 320vw, 1800px);
+    height: 125vh;
+    max-height: 1300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -952,8 +939,6 @@ body {
     height: 100%;
     object-fit: contain;
     object-position: center center;
-    transform: scale(2.6);
-    transform-origin: center center;
   }
 
   /* Headline inferiore su Mobile: visibilmente più grande e di forte impatto */
