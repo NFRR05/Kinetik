@@ -909,11 +909,11 @@ body {
   100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
 }
 
-  /* Giocatore Hero su Mobile: ancora più grande (320vw / 125vh), spostato a sinistra (left: 21%) con maschera di trasparenza in basso */
+  /* Giocatore Hero su Mobile: ancora più a sinistra (left: 10%), più in basso (top: 65%) con dissolvenza molto più marcata */
   .hero-player-layer {
     position: absolute;
-    left: 21%;
-    top: 55%;
+    left: 10%;
+    top: 65%;
     bottom: auto;
     right: auto;
     transform: translate(-50%, -50%);
@@ -926,8 +926,8 @@ body {
     pointer-events: none;
     z-index: 10;
     animation: heroPlayerCutoutInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
-    mask-image: linear-gradient(180deg, black 0%, black 58%, rgba(0,0,0,0.4) 72%, transparent 86%);
-    -webkit-mask-image: linear-gradient(180deg, black 0%, black 58%, rgba(0,0,0,0.4) 72%, transparent 86%);
+    mask-image: linear-gradient(180deg, black 0%, black 40%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.15) 68%, transparent 78%);
+    -webkit-mask-image: linear-gradient(180deg, black 0%, black 40%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.15) 68%, transparent 78%);
   }
   
   .hero-player-img {
