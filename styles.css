@@ -1263,8 +1263,12 @@ body {
     padding: 5.5rem var(--layout-inset) 1.2rem var(--layout-inset);
   }
   .hero-headline-massive {
-    top: 2%;
-    font-size: clamp(3.2rem, 14vw, 5.5rem);
+    top: 5.6rem;
+    left: var(--layout-inset);
+    right: var(--layout-inset);
+    font-size: clamp(3.4rem, 15vw, 5.8rem);
+    line-height: 0.85;
+    color: rgba(255, 255, 255, 0.12);
   }
   
 @keyframes heroPlayerCutoutInMobile {
