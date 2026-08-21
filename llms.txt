@@ -1,0 +1,21 @@
+# KINETIK Padel & Tennis Club
+
+> KINETIK è un club sportivo premium indoor dedicato a padel e tennis, dotato di 6 campi panoramici ufficiali Mondo Supercourt XN, 3 campi tennis in resina veloce e terra battuta, 10m di altezza libera senza ostacoli, maestri federali FITP certificati e apertura 365 giorni l'anno non-stop.
+
+## Struttura & Impianti
+- **Campi Padel**: 6 campi panoramici indoor con manto ufficiale Mondo Supercourt XN e cristalli stratificati da 12mm.
+- **Campi Tennis**: 3 campi con superfici professionali in resina veloce e terra battuta.
+- **Altezza Libera**: 10 metri lineari senza alcun ostacolo strutturale aereo.
+- **Disponibilità**: Aperto 7 giorni su 7, 365 giorni all'anno, dalle ore 07:00 alle 24:00.
+
+## Academy, Corsi & Community
+- **Maestri Federali**: 100% istruttori certificati FITP di 1° e 2° livello per percorsi Junior, Agonisti e Adulti.
+- **Community & Ranking**: Oltre 2.400 atleti attivi, match settimanali organizzati, tornei ufficiali FITP e ranking interno.
+- **Prenotazioni**: Sistema rapido di prenotazione campi e lezioni private.
+
+## Link Ufficiali
+- [Homepage KINETIK](https://kinetik.vercel.app/)
+- [Struttura & Numeri del Club](https://kinetik.vercel.app/#metriche)
+- [Maestri & Corsi](https://kinetik.vercel.app/#corsi)
+- [Tornei & Community](https://kinetik.vercel.app/#tornei)
+- [Prenota un Campo](https://kinetik.vercel.app/#prenota)
