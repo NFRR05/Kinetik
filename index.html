@@ -181,30 +181,44 @@
   <!-- ==================== SCRIPTS: LENIS & SCROLL REVEAL OBSERVER ==================== -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // 1. Inizializzazione Lenis
+    // 1. Inizializzazione Lenis ottimizzata per Performance (Nessun lag su Touch/Mobile)
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false
+      wheelMultiplier: 0.9,
+      syncTouch: false,
+      touchMultiplier: 0
     });
 
     const navbar = document.getElementById('navbar');
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
 
-    function raf(time) {
-      lenis.raf(time);
-      if (window.scrollY > 40) {
+    function onScroll(scrollY) {
+      if (scrollY > 40) {
         navbar.classList.add('scrolled');
       } else {
         navbar.classList.remove('scrolled');
       }
+    }
+
+    function raf(time) {
+      lenis.raf(time);
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    lenis.on('scroll', (e) => {
+      onScroll(e.scroll);
+    });
+
+    // Fallback nativo per scroll su mobile
+    window.addEventListener('scroll', () => {
+      onScroll(window.scrollY);
+    }, { passive: true });
 
     // Smooth scroll su ancore interne (#metriche, #hero, etc.)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

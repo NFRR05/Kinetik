@@ -204,9 +204,9 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 60% 45%, rgba(23, 88, 146, 0.2) 0%, rgba(9, 26, 48, 0.6) 70%, rgba(5, 16, 30, 0.92) 100%),
-              linear-gradient(180deg, rgba(7, 20, 36, 0.65) 0%, rgba(18, 70, 118, 0.12) 50%, rgba(6, 18, 33, 0.85) 100%);
-  mix-blend-mode: multiply;
+  background: radial-gradient(circle at 60% 45%, rgba(23, 88, 146, 0.3) 0%, rgba(9, 26, 48, 0.75) 70%, rgba(5, 16, 30, 0.96) 100%),
+              linear-gradient(180deg, rgba(7, 20, 36, 0.7) 0%, rgba(18, 70, 118, 0.2) 50%, rgba(6, 18, 33, 0.9) 100%);
+  pointer-events: none;
 }
 
 .court-lines-overlay {
@@ -909,18 +909,21 @@ body {
   }
   
 @keyframes heroPlayerCutoutInMobile {
-  0% { opacity: 0; transform: translate(-50%, calc(-50% + 40px)) scale(0.94); }
-  100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  0% { opacity: 0; transform: translate3d(-50%, calc(-50% + 35px), 0) scale(0.95); }
+  100% { opacity: 1; transform: translate3d(-50%, -50%, 0) scale(1); }
 }
 
-  /* Giocatore Hero su Mobile: ancora più a sinistra (left: 10%), più in basso (top: 65%) con dissolvenza molto più marcata */
+  /* Giocatore Hero su Mobile: GPU Accelerated (Zero sfarfallii o ricaricamenti anomali) */
   .hero-player-layer {
     position: absolute;
     left: 10%;
     top: 65%;
     bottom: auto;
     right: auto;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     width: clamp(1200px, 320vw, 1800px);
     height: 125vh;
     max-height: 1300px;
@@ -932,6 +935,7 @@ body {
     animation: heroPlayerCutoutInMobile 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.95s forwards;
     mask-image: linear-gradient(180deg, black 0%, black 40%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.15) 68%, transparent 78%);
     -webkit-mask-image: linear-gradient(180deg, black 0%, black 40%, rgba(0,0,0,0.5) 55%, rgba(0,0,0,0.15) 68%, transparent 78%);
+    will-change: transform, opacity;
   }
   
   .hero-player-img {
@@ -939,6 +943,9 @@ body {
     height: 100%;
     object-fit: contain;
     object-position: center center;
+    filter: drop-shadow(0 15px 30px rgba(3, 12, 24, 0.5));
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   /* Headline inferiore su Mobile: visibilmente più grande e di forte impatto */
