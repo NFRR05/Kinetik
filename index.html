@@ -302,11 +302,17 @@
       const preloader = document.getElementById('site-preloader');
       if (preloader) {
         setTimeout(() => {
+          // 1. Apertura sipario preloader
           preloader.classList.add('loaded');
+          // 2. Avvio immediato dell'animazione di ingresso della Hero
+          document.body.classList.add('hero-animated');
+          
           setTimeout(() => {
             preloader.style.display = 'none';
           }, 550);
         }, 1600); // 1.6s: rotazione rapida logo (0.75s) -> scorrimento fluido KINETIK (0.85s) -> sipario veloce (0.5s)
+      } else {
+        document.body.classList.add('hero-animated');
       }
     });
 
