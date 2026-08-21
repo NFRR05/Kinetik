@@ -181,7 +181,7 @@
   <!-- ==================== SCRIPTS: LENIS & SCROLL REVEAL OBSERVER ==================== -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // 1. Inizializzazione Lenis ottimizzata per Performance (Nessun lag su Touch/Mobile)
+    // 1. Inizializzazione Lenis con SyncTouch calibrato per Mobile/Desktop
     const lenis = new Lenis({
       duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -189,8 +189,9 @@
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 0.9,
-      syncTouch: false,
-      touchMultiplier: 0
+      syncTouch: true,               // Sincronizzazione touch attiva
+      syncTouchLerp: 0.08,           // Interpolazione fluida senza ritardi
+      touchInertiaMultiplier: 25     // Inerzia touch naturale
     });
 
     const navbar = document.getElementById('navbar');
