@@ -614,7 +614,7 @@ body {
 .bento-grid {
   display: grid;
   grid-template-columns: 1.25fr 0.95fr 1.45fr;
-  grid-auto-rows: 240px;
+  grid-template-rows: 240px 285px;
   gap: 6px;
 }
 
@@ -707,12 +707,16 @@ body {
   border: 1px solid var(--bg-sky-border);
 }
 
-/* Card 3: Centro in alto (Verde Volt Brand) */
+/* Card 3: Centro in alto (Verde Volt Brand - Allineamento Geometrico con Card 1) */
 .bento-card-3 {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
   background-color: var(--accent-volt);
   color: var(--text-dark-primary);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 /* Card 4: Centro in basso (Azzurrino Sky Light con Watermark SVG Rotante) */
@@ -813,7 +817,7 @@ body {
   transform: none !important;
 }
 
-/* Overlay contenuto posizionato esattamente all'altezza di riga 2 (246px) su desktop con sfumatura ultra-progressiva */
+/* Overlay contenuto posizionato esattamente all'altezza di riga 2 (246px) su desktop con sfumatura ultra-progressiva e respiro inferiore */
 .bento-player-content {
   position: absolute;
   top: calc(240px + 6px); /* Inizio esatto di Row 2 */
@@ -823,7 +827,7 @@ body {
   z-index: 2;
   box-sizing: border-box;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.25) 15%, rgba(255, 255, 255, 0.65) 40%, rgba(255, 255, 255, 0.94) 65%, #ffffff 100%);
-  padding: 1.8rem;
+  padding: 1.8rem 1.8rem 2.2rem 1.8rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -859,6 +863,95 @@ body {
 .reveal-item.is-visible .card-meta-desc {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Bottoni d'Azione Card 5 (Community & Tornei) con Hover Radiale Brand */
+.bento-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 1.4rem;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.42s,
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.42s;
+}
+
+.reveal-item.is-visible .bento-card-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bento-btn-primary,
+.bento-btn-secondary {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px; /* Pari esatta al bottone Prenota un campo */
+  padding: 0 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-standard);
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.4s ease;
+}
+
+.bento-btn-primary::before,
+.bento-btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  z-index: -1;
+  clip-path: circle(0% at 0% 0%);
+  transition: clip-path 0.65s cubic-bezier(0.2, 0.9, 0.3, 1), background-color 0.3s ease;
+  pointer-events: none;
+}
+
+.bento-btn-primary:hover::before,
+.bento-btn-secondary:hover::before {
+  clip-path: circle(160% at 0% 0%);
+}
+
+/* Bottone Primario: Dark Navy con espansione Volt Green */
+.bento-btn-primary {
+  background-color: var(--bg-deep-blue);
+  color: #ffffff;
+}
+
+.bento-btn-primary::before {
+  background-color: var(--accent-volt);
+}
+
+.bento-btn-primary:hover {
+  color: var(--bg-deep-blue);
+}
+
+/* Bottone Secondario (Scopri i Tornei): Verde Volt di default, Bianco su hover/click */
+.bento-btn-secondary {
+  background-color: var(--accent-volt);
+  color: #091a30;
+}
+
+.bento-btn-secondary::before {
+  background-color: #ffffff;
+}
+
+.bento-btn-secondary:hover {
+  color: #091a30;
 }
 
 /* Tipografia Base Cards */
@@ -1052,7 +1145,7 @@ body {
     display: none; /* Rimosso testo lungo 'Manto ufficiale...' su mobile */
   }
   
-  /* Card 2: 2 Mini-Card affiancate */
+  /* Card 2: 2 Mini-Card affiancate (Riga 1 del blocco 2x2) */
   .bento-card-2 {
     grid-column: 1 / 3;
     grid-row: auto;
@@ -1060,17 +1153,29 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 6px;
     padding: 0;
+    background: transparent;
+    border: none;
   }
 
-  .bento-mini-card {
-    padding: 1.2rem;
-    min-height: 130px;
+  /* Tutte e 4 le card 2x2 con altezza rigorosamente identica, stesso padding e stessa struttura flex */
+  .bento-mini-card,
+  .bento-card-3,
+  .bento-card-4 {
+    height: 140px !important;
+    min-height: 140px !important;
+    max-height: 140px !important;
+    padding: 1.2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    box-sizing: border-box !important;
   }
 
   .bento-mini-card .card-number-huge,
   .bento-card-3 .card-number-huge,
   .bento-card-4 .card-number-huge {
     font-size: 2.6rem;
+    line-height: 0.9;
   }
 
   .bento-mini-card .card-meta-title,
@@ -1078,6 +1183,7 @@ body {
   .bento-card-4 .card-meta-title {
     font-size: 0.92rem;
     margin-top: 0.25rem;
+    line-height: 1.15;
   }
 
   .bento-mini-card .card-meta-desc,
@@ -1090,16 +1196,12 @@ body {
   .bento-card-3 {
     grid-column: 1 / 2;
     grid-row: auto;
-    min-height: 130px;
-    padding: 1.2rem;
   }
 
   /* Card 4: 7/7 Aperti 365gg (Metà destra riga 2x2) */
   .bento-card-4 {
     grid-column: 2 / 3;
     grid-row: auto;
-    min-height: 130px;
-    padding: 1.2rem;
   }
   
   /* Card 5: Full Width con Bento Player */
@@ -1129,6 +1231,21 @@ body {
 
   .bento-card-5 .card-meta-title {
     font-size: 1.15rem;
+  }
+
+  .bento-card-actions {
+    margin-top: 0.9rem;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .bento-btn-primary,
+  .bento-btn-secondary {
+    height: 44px;
+    padding: 0 1.2rem;
+    font-size: 0.82rem;
+    flex: 1;
+    min-width: 130px;
   }
 
   .bento-card-watermark {
