@@ -297,7 +297,7 @@
   <!-- ==================== SCRIPTS: LENIS & SCROLL REVEAL OBSERVER ==================== -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
-    // 0. Brand Preloader: Gestione Animazione di Ingresso & Rivelazione Pagina (2.6s)
+    // 0. Brand Preloader: Gestione Animazione di Ingresso & Rivelazione Pagina (2.85s)
     window.addEventListener('DOMContentLoaded', () => {
       const preloader = document.getElementById('site-preloader');
       if (preloader) {
@@ -305,8 +305,8 @@
           preloader.classList.add('loaded');
           setTimeout(() => {
             preloader.style.display = 'none';
-          }, 950);
-        }, 2600); // 2.6 secondi: spin -> volt green -> slide fluida lenta KINETIK volt -> apertura sipario
+          }, 700);
+        }, 2850); // 2.85s: rotazione lenta -> volt green -> comparsa parola KINETIK -> sipario rapido (0.6s)
       }
     });
 
