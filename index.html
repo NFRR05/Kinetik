@@ -387,6 +387,93 @@
     </div>
   </section>
 
+  <!-- ==================== SECTION 5: ACADEMY & COACH CAROUSEL ==================== -->
+  <section class="coaches-section" id="corsi">
+    <div class="coaches-container">
+      
+      <!-- Section Header con Frecce di Controllo Carosello -->
+      <div class="coaches-header reveal-item">
+        <div class="coaches-header-left">
+          <h2 class="coaches-title">I Maestri &amp; Lo Staff Tecnico</h2>
+          <p class="coaches-header-desc">
+            Staff certificato FITP e preparatori federali dedicati a lezioni private, corsi di gruppo e academy agonistica.
+          </p>
+        </div>
+
+        <div class="carousel-nav-controls" aria-label="Controlli Carosello Coach">
+          <button class="carousel-ctrl-btn" id="coach-prev-btn" aria-label="Scorri a sinistra">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <button class="carousel-ctrl-btn" id="coach-next-btn" aria-label="Scorri a destra">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Coach Carousel Track -->
+      <div class="coaches-carousel-wrapper reveal-item">
+        <div class="coaches-carousel-track" id="coaches-track" role="region" aria-label="Carosello Maestri KINETIK">
+          
+          <!-- Coach 1: Marco Rossi -->
+          <article class="coach-card">
+            <div class="coach-card-img-wrap">
+              <img src="assets/coach-1.jpg" alt="Marco Rossi - Head Coach Padel KINETIK" class="coach-card-img" loading="lazy">
+              <div class="coach-card-gradient"></div>
+            </div>
+            <div class="coach-card-info">
+              <h3 class="coach-name">Marco Rossi</h3>
+              <p class="coach-role">Head Coach Padel · Maestro Nazionale FITP</p>
+            </div>
+          </article>
+
+          <!-- Coach 2: Elena Bianchi -->
+          <article class="coach-card">
+            <div class="coach-card-img-wrap">
+              <img src="assets/coach-2.jpg" alt="Elena Bianchi - Pro Tour Trainer KINETIK" class="coach-card-img" loading="lazy">
+              <div class="coach-card-gradient"></div>
+            </div>
+            <div class="coach-card-info">
+              <h3 class="coach-name">Elena Bianchi</h3>
+              <p class="coach-role">Pro Tour Trainer · Padel &amp; Atletica</p>
+            </div>
+          </article>
+
+          <!-- Coach 3: Luca Ferrari -->
+          <article class="coach-card">
+            <div class="coach-card-img-wrap">
+              <img src="assets/coach-3.jpg" alt="Luca Ferrari - Head Coach Tennis KINETIK" class="coach-card-img" loading="lazy">
+              <div class="coach-card-gradient"></div>
+            </div>
+            <div class="coach-card-info">
+              <h3 class="coach-name">Luca Ferrari</h3>
+              <p class="coach-role">Head Coach Tennis · Ex Giocatore ATP</p>
+            </div>
+          </article>
+
+          <!-- Coach 4: Sara Conti -->
+          <article class="coach-card">
+            <div class="coach-card-img-wrap">
+              <img src="assets/coach-4.jpg" alt="Sara Conti - Direttore Junior Academy KINETIK" class="coach-card-img" loading="lazy">
+              <div class="coach-card-gradient"></div>
+            </div>
+            <div class="coach-card-info">
+              <h3 class="coach-name">Sara Conti</h3>
+              <p class="coach-role">Direttore Junior Academy &amp; Agonistica</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Bottom Action Row -->
+      <div class="coaches-footer-action reveal-item">
+        <a href="#corsi" class="coaches-btn-cta">PRENOTA UNA LEZIONE</a>
+        <span class="coaches-footer-note">Lezioni individuali e percorsi tecnici per ogni livello di gioco</span>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ==================== SCRIPTS: LENIS & SCROLL REVEAL OBSERVER ==================== -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
@@ -526,6 +613,24 @@
 
       document.querySelectorAll('.reveal-item').forEach(el => {
         revealObserver.observe(el);
+      });
+    }
+
+    // 4. Coach Carousel Scroll Controls
+    const coachesTrack = document.getElementById('coaches-track');
+    const coachPrevBtn = document.getElementById('coach-prev-btn');
+    const coachNextBtn = document.getElementById('coach-next-btn');
+
+    if (coachesTrack && coachPrevBtn && coachNextBtn) {
+      coachPrevBtn.addEventListener('click', () => {
+        const card = coachesTrack.querySelector('.coach-card');
+        const scrollAmount = card ? card.offsetWidth + 20 : 320;
+        coachesTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+      coachNextBtn.addEventListener('click', () => {
+        const card = coachesTrack.querySelector('.coach-card');
+        const scrollAmount = card ? card.offsetWidth + 20 : 320;
+        coachesTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
       });
     }
   </script>
