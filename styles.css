@@ -1223,7 +1223,6 @@ body {
   background-color: var(--bg-card-surface);
   color: var(--text-dark-primary);
   padding: 5.5rem var(--layout-inset) 6.5rem var(--layout-inset);
-  border-top: 1px solid var(--border-card-subtle);
 }
 
 .facility-container {
@@ -1259,11 +1258,11 @@ body {
   margin: 0;
 }
 
-/* Gallery Grid Layout (Senza hover state) */
+/* Gallery Grid Layout (Spaziatura Standard 4px come Bento e Bottoni) */
 .facility-gallery-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 16px;
+  gap: 4px;
   width: 100%;
 }
 
@@ -1354,9 +1353,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  margin-top: 2.4rem;
-  padding-top: 1.8rem;
-  border-top: 1px solid var(--border-card-subtle);
+  margin-top: 2rem;
+  padding-top: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -1426,7 +1424,6 @@ body {
   background-color: #ffffff;
   color: var(--text-dark-primary);
   padding: 5.5rem var(--layout-inset) 6.5rem var(--layout-inset);
-  border-top: 1px solid var(--border-card-subtle);
 }
 
 .coaches-container {
@@ -1473,7 +1470,7 @@ body {
 .carousel-nav-controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
 }
 
 .carousel-ctrl-btn {
@@ -1497,7 +1494,7 @@ body {
   border-color: #091a30;
 }
 
-/* Carousel Track & Cards */
+/* Carousel Track & Cards (Spaziatura 4px) */
 .coaches-carousel-wrapper {
   position: relative;
   width: 100%;
@@ -1506,13 +1503,13 @@ body {
 
 .coaches-carousel-track {
   display: flex;
-  gap: 16px;
+  gap: 4px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 4px 2px 8px 2px;
+  padding: 2px;
 }
 
 .coaches-carousel-track::-webkit-scrollbar {
@@ -1520,7 +1517,7 @@ body {
 }
 
 .coach-card {
-  flex: 0 0 calc(25% - 12px);
+  flex: 0 0 calc(25% - 3px);
   min-width: 280px;
   scroll-snap-align: start;
   position: relative;
@@ -1590,9 +1587,8 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  margin-top: 2.4rem;
-  padding-top: 1.8rem;
-  border-top: 1px solid var(--border-card-subtle);
+  margin-top: 2rem;
+  padding-top: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -1968,7 +1964,7 @@ body {
 
   .facility-gallery-grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 4px;
   }
 
   .gallery-card,
@@ -1986,8 +1982,8 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 0.8rem;
-    margin-top: 1.8rem;
-    padding-top: 1.4rem;
+    margin-top: 1.5rem;
+    padding-top: 0;
   }
 
   .facility-btn-cta {
@@ -2015,6 +2011,10 @@ body {
     display: none;
   }
 
+  .coaches-carousel-track {
+    gap: 4px;
+  }
+
   .coach-card {
     flex: 0 0 78vw;
     min-width: 250px;
@@ -2026,8 +2026,8 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 0.8rem;
-    margin-top: 1.8rem;
-    padding-top: 1.4rem;
+    margin-top: 1.5rem;
+    padding-top: 0;
   }
 
   .coaches-btn-cta {
