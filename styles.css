@@ -2382,16 +2382,16 @@ body {
     font-size: 0.8rem;
   }
 
-  /* CTA Banner Mobile: Leggibilità Perfetta con Testi Bianchi */
+  /* CTA Banner Mobile: Sfondo Bianco Puro con Racchetta in Basso */
   .cta-banner-section {
-    padding: 4.5rem var(--layout-inset) 4.5rem var(--layout-inset);
-    min-height: 480px;
-    background-color: var(--bg-deep-blue);
+    padding: 4rem var(--layout-inset) 280px var(--layout-inset);
+    min-height: 520px;
+    background-color: #ffffff;
   }
 
   .cta-banner-bg-img {
-    opacity: 0.22;
-    object-position: center right;
+    opacity: 1;
+    object-position: center bottom;
   }
 
   .cta-banner-container {
@@ -2407,16 +2407,16 @@ body {
   }
 
   .cta-kicker {
-    color: var(--accent-volt);
+    color: #091a30;
   }
 
   .cta-headline {
-    color: #ffffff;
+    color: var(--text-dark-primary);
     font-size: clamp(1.9rem, 6.2vw, 2.5rem);
   }
 
   .cta-description {
-    color: var(--text-white-85);
+    color: var(--text-dark-secondary);
     font-size: 0.92rem;
     margin-bottom: 1.8rem;
   }
@@ -2430,14 +2430,17 @@ body {
   .cta-btn-primary {
     width: 100%;
     justify-content: center;
+    background-color: var(--accent-volt);
+    color: #091a30;
+    border-color: var(--accent-volt);
   }
 
   .cta-btn-secondary {
     width: 100%;
     justify-content: center;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.35);
-    background-color: rgba(255, 255, 255, 0.08);
+    color: #091a30;
+    border-color: #091a30;
+    background-color: rgba(255, 255, 255, 0.85);
   }
 
   /* Footer Mobile */
