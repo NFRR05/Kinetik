@@ -301,181 +301,105 @@
     </div>
   </section>
 
-  <!-- ==================== SECTION 4: CAMPI & SPECIFICHE STRUTTURA ==================== -->
+  <!-- ==================== SECTION 4: GALLERY CAMPI & STRUTTURA ==================== -->
   <section class="facility-section" id="campi">
     <div class="facility-container">
       
-      <!-- Facility Section Header -->
+      <!-- Facility Section Header: Minimale ed Editoriale -->
       <div class="facility-header reveal-item">
         <div class="facility-header-left">
-          <div class="facility-section-badge">
-            <span class="facility-badge-dot"></span>
-            <span>SPECIFICHE STRUTTURA INDOOR</span>
-          </div>
-          <h2 class="facility-title">Campi d'Eccellenza Pro Circuit</h2>
+          <span class="facility-section-kicker">L'ARENA &amp; I CAMPI</span>
+          <h2 class="facility-title">Spazi Creati Per Il Gioco</h2>
         </div>
         <p class="facility-header-desc">
-          Architettura sportiva all'avanguardia a Milano: comfort climatico continuo, illuminazione omogenea e superfici ufficiali per massime prestazioni di gioco.
+          Un'infrastruttura indoor senza compromessi a Milano: 6 campi panoramici da padel, 3 campi da tennis in resina e una clubhouse con affaccio diretto sul gioco.
         </p>
       </div>
 
-      <!-- Interactive Facility Court Switcher Tabs -->
+      <!-- Filter Tabs Puliti (Senza icone) -->
       <div class="facility-tabs-wrap reveal-item">
-        <div class="facility-tabs-nav" role="tablist" aria-label="Seleziona Tipologia di Campo">
-          <button class="facility-tab-btn active" id="tab-btn-padel" role="tab" aria-selected="true" aria-controls="panel-padel" data-tab="padel">
-            <span class="tab-btn-badge">6 CAMPI</span>
-            <span class="tab-btn-title">PADEL PANORAMICO</span>
-          </button>
-          <button class="facility-tab-btn" id="tab-btn-tennis" role="tab" aria-selected="false" aria-controls="panel-tennis" data-tab="tennis">
-            <span class="tab-btn-badge">3 CAMPI</span>
-            <span class="tab-btn-title">TENNIS INDOOR RESINA</span>
-          </button>
+        <div class="facility-tabs-nav" role="tablist" aria-label="Filtra Galleria Campi">
+          <button class="facility-tab-btn active" data-filter="all">TUTTI GLI SPAZI</button>
+          <button class="facility-tab-btn" data-filter="padel">PADEL INDOOR (6)</button>
+          <button class="facility-tab-btn" data-filter="tennis">TENNIS RESINA (3)</button>
+          <button class="facility-tab-btn" data-filter="lounge">CLUBHOUSE</button>
         </div>
       </div>
 
-      <!-- Facility Court Panels Container -->
-      <div class="facility-panels-container">
+      <!-- Gallery Grid Fotografica -->
+      <div class="facility-gallery-grid">
         
-        <!-- Panel 1: PADEL PANORAMICO (Active Default) -->
-        <div class="facility-court-card active reveal-item" id="panel-padel" role="tabpanel" aria-labelledby="tab-btn-padel">
-          <div class="court-card-visual">
-            <img src="assets/court-padel.jpg" alt="Campo Padel Panoramico Indoor KINETIK a Milano" class="court-card-img" loading="lazy">
-            <div class="court-card-badge-floating">
-              <span class="court-status-dot"></span>
-              <span>WORLD PADEL TOUR SPECS</span>
-            </div>
+        <!-- Card 1: Padel Panoramico in Azione (Grande) -->
+        <article class="gallery-card gallery-card-large reveal-item" data-category="padel">
+          <div class="gallery-card-img-wrap">
+            <img src="assets/gallery-padel-1.jpg" alt="Campo Padel Panoramico KINETIK in azione a Milano" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-gradient"></div>
           </div>
-          
-          <div class="court-card-content">
-            <div class="court-card-top">
-              <span class="court-category-sub">SUPERFICIE &amp; AMBIENTE DI GIOCO</span>
-              <h3 class="court-card-title">Mondo Supercourt XN &amp; Cristalli 12mm</h3>
-              <p class="court-card-lead">
-                I nostri 6 campi panoramici indoor offrono la massima visibilità a 360° senza montanti d'angolo, combinati con manto ufficiale ad alta aderenza e zero rimbalzi anomali.
-              </p>
-            </div>
-
-            <!-- Specs Grid: 4 Pill Cards -->
-            <div class="court-specs-grid">
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Manto Tecnico</span>
-                  <span class="spec-value">Mondo Supercourt XN</span>
-                </div>
-              </div>
-
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Pareti Panoramiche</span>
-                  <span class="spec-value">Cristallo Stratificato 12mm</span>
-                </div>
-              </div>
-
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Illuminazione Sportiva</span>
-                  <span class="spec-value">800 Lux LED Anti-Abbaglio</span>
-                </div>
-              </div>
-
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Altezza &amp; Clima</span>
-                  <span class="spec-value">10M Libera &amp; 20°C Costanti</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Court Card Actions -->
-            <div class="court-card-bottom">
-              <a href="#prenota" class="court-btn-primary">PRENOTA CAMPO PADEL</a>
-              <span class="court-availability-hint">Disponibilità live su Playtomic &amp; App KINETIK</span>
-            </div>
+          <div class="gallery-card-info">
+            <span class="gallery-card-tag">PADEL PANORAMICO</span>
+            <h3 class="gallery-card-title">Mondo Supercourt XN &amp; Cristalli 12mm</h3>
+            <p class="gallery-card-desc">Pareti continue senza montanti d'angolo per visione a 360° e illuminazione LED lineare 800 Lux anti-abbaglio.</p>
           </div>
-        </div>
+        </article>
 
-        <!-- Panel 2: TENNIS INDOOR RESINA -->
-        <div class="facility-court-card reveal-item" id="panel-tennis" role="tabpanel" aria-labelledby="tab-btn-tennis" hidden>
-          <div class="court-card-visual">
-            <img src="assets/court-tennis.jpg" alt="Campo Tennis Indoor Resina Acrilica KINETIK a Milano" class="court-card-img" loading="lazy">
-            <div class="court-card-badge-floating">
-              <span class="court-status-dot"></span>
-              <span>ITF TOURNAMENT SPECS</span>
-            </div>
+        <!-- Card 2: Tennis Indoor Resina -->
+        <article class="gallery-card reveal-item" data-category="tennis">
+          <div class="gallery-card-img-wrap">
+            <img src="assets/court-tennis.jpg" alt="Campi Tennis Indoor in Resina Acrilica KINETIK" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-gradient"></div>
           </div>
-          
-          <div class="court-card-content">
-            <div class="court-card-top">
-              <span class="court-category-sub">SUPERFICIE &amp; AMBIENTE DI GIOCO</span>
-              <h3 class="court-card-title">Resina Cushion Pro &amp; Spazi Regolamentari</h3>
-              <p class="court-card-lead">
-                I 3 campi da tennis indoor in resina acrilica multistrato a rimbalzo controllato offrono una risposta elastica protettiva per le articolazioni e ampi corridoi d'uscita.
-              </p>
-            </div>
-
-            <!-- Specs Grid: 4 Pill Cards -->
-            <div class="court-specs-grid">
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Manto Tecnico</span>
-                  <span class="spec-value">Resina Acrilica 7 Strati</span>
-                </div>
-              </div>
-
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Dimensioni Campo</span>
-                  <span class="spec-value">Out 6.5m &amp; Fondo 8.0m</span>
-                </div>
-              </div>
-
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Illuminazione Sportiva</span>
-                  <span class="spec-value">1000 Lux Broadcast Pro</span>
-                </div>
-              </div>
-
-              <div class="court-spec-item">
-                <div class="spec-item-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
-                </div>
-                <div class="spec-item-info">
-                  <span class="spec-label">Isolamento Termico</span>
-                  <span class="spec-value">Clima 19°C &amp; Zero Umidità</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Court Card Actions -->
-            <div class="court-card-bottom">
-              <a href="#prenota" class="court-btn-primary">PRENOTA CAMPO TENNIS</a>
-              <span class="court-availability-hint">Disponibilità live su Playtomic &amp; App KINETIK</span>
-            </div>
+          <div class="gallery-card-info">
+            <span class="gallery-card-tag">TENNIS INDOOR</span>
+            <h3 class="gallery-card-title">Resina Cushion Pro ITF</h3>
+            <p class="gallery-card-desc">Superficie elastica a 7 strati ad alto assorbimento d'impatto con ampie zone di fuga laterali.</p>
           </div>
-        </div>
+        </article>
 
+        <!-- Card 3: Arena Indoor 10M Altezza -->
+        <article class="gallery-card reveal-item" data-category="padel">
+          <div class="gallery-card-img-wrap">
+            <img src="assets/gallery-padel-wide.jpg" alt="Panoramica Arena Indoor con molteplici campi KINETIK" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-gradient"></div>
+          </div>
+          <div class="gallery-card-info">
+            <span class="gallery-card-tag">L'ARENA INDOOR</span>
+            <h3 class="gallery-card-title">10 Metri d'Altezza Libera</h3>
+            <p class="gallery-card-desc">Volume aereo illimitato per il pallonetto, climatizzazione a 20°C e deumidificazione attiva costante.</p>
+          </div>
+        </article>
+
+        <!-- Card 4: Clubhouse & Bistrot -->
+        <article class="gallery-card reveal-item" data-category="lounge">
+          <div class="gallery-card-img-wrap">
+            <img src="assets/gallery-lounge.jpg" alt="Players Lounge & Bistrot Panoramico KINETIK Club" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-gradient"></div>
+          </div>
+          <div class="gallery-card-info">
+            <span class="gallery-card-tag">CLUB LIFE</span>
+            <h3 class="gallery-card-title">Clubhouse &amp; Bistrot Lounge</h3>
+            <p class="gallery-card-desc">Spazio relax panoramico sui campi di gioco con bar, cucina salutistica e area match analysis.</p>
+          </div>
+        </article>
+
+        <!-- Card 5: Dettaglio Tecnico Campo Padel -->
+        <article class="gallery-card reveal-item" data-category="padel">
+          <div class="gallery-card-img-wrap">
+            <img src="assets/court-padel.jpg" alt="Dettaglio costruttivo campo padel indoor KINETIK" class="gallery-card-img" loading="lazy">
+            <div class="gallery-card-gradient"></div>
+          </div>
+          <div class="gallery-card-info">
+            <span class="gallery-card-tag">WORLD PADEL TOUR READY</span>
+            <h3 class="gallery-card-title">Specifiche Ufficiali FIP</h3>
+            <p class="gallery-card-desc">Gabbie a filo vetro studiate per uscite esterne sicure e rimbalzi uniformi su ogni centimetro del campo.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom Action Bar -->
+      <div class="facility-footer-action reveal-item">
+        <a href="#prenota" class="facility-btn-cta">PRENOTA IL TUO CAMPO</a>
+        <span class="facility-footer-note">Tariffe orarie trasparenti · Prenotazione diretta su Playtomic &amp; App</span>
       </div>
 
     </div>
@@ -623,31 +547,32 @@
       });
     }
 
-    // 4. Facility Court Tab Switcher (Padel vs Tennis)
-    const courtTabButtons = document.querySelectorAll('.facility-tab-btn');
-    const courtPanels = document.querySelectorAll('.facility-court-card');
+    // 4. Facility Gallery Filter Controller
+    const galleryFilterBtns = document.querySelectorAll('.facility-tab-btn');
+    const galleryCards = document.querySelectorAll('.gallery-card');
 
-    courtTabButtons.forEach(btn => {
+    galleryFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        const targetTab = btn.getAttribute('data-tab');
-        if (!targetTab) return;
+        const filter = btn.getAttribute('data-filter');
+        if (!filter) return;
 
-        courtTabButtons.forEach(b => {
-          b.classList.remove('active');
-          b.setAttribute('aria-selected', 'false');
-        });
+        galleryFilterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
 
-        courtPanels.forEach(panel => {
-          if (panel.id === `panel-${targetTab}`) {
-            panel.hidden = false;
+        galleryCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (filter === 'all' || cardCat === filter) {
+            card.classList.remove('is-hidden');
             setTimeout(() => {
-              panel.classList.add('active');
-            }, 20);
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0) scale(1)';
+            }, 10);
           } else {
-            panel.classList.remove('active');
-            panel.hidden = true;
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(15px) scale(0.98)';
+            setTimeout(() => {
+              card.classList.add('is-hidden');
+            }, 250);
           }
         });
       });
