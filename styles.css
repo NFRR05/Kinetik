@@ -1676,7 +1676,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: right center;
   opacity: 1;
 }
 
@@ -1747,7 +1747,6 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   white-space: nowrap;
   border: 1px solid #091a30;
   outline: none;
@@ -1800,7 +1799,6 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
   white-space: nowrap;
   border: 1px solid #091a30;
   outline: none;
